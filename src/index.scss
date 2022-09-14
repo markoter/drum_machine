@@ -14,20 +14,27 @@ body {
     border: 2px solid red;
     padding: 4px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 
     .machine-part {
         height: 40vw;
         width: 40vw;
+        //border: 2px solid var(--main-color);
+    }
+
+    #pads-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        border: 2px solid var(--main-color);
+        align-items: center;
+        justify-items: center;
 
         .drum-pad {
             border: 2px dotted var(--main-color);
             height: 10vw;
             width: 10vw;
-            margin: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
