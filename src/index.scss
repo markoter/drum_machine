@@ -1,0 +1,9 @@
+:root {
+    --main-color: black;
+    --color-back: beige;
+}
+body {
+    background-color: var(--color-back);
+    margin: 0;
+    padding: 0;
+}
