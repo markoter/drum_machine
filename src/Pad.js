@@ -3,9 +3,9 @@ import React from "react";
 const Pad = (props) => {
     const { id, sampleSrc, keySelect } = props
     const handleClick = () => {
-        //const sound = document.querySelector(".audio")
-        //sound.play()
+        const sound = document.querySelector(`#${keySelect}`)
         const button = document.querySelector(`#${id}`)
+        sound.play()
         button.classList.toggle("clicked")
 
     }
