@@ -1,9 +1,12 @@
 import React from "react";
 
-const Pad = () => {
+const Pad = (props) => {
+    const {id, sampleSrc, keySelect} = props
     return (
-        <div className="drum-pad">
+        <div id={id} className="drum-pad">
             drum pad
+            <p>{keySelect}</p>
+            <p>{sampleSrc}</p>
         </div>
     )
 }
