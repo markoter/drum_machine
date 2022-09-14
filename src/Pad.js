@@ -17,8 +17,8 @@ const Pad = (props) => {
     }
     return (
         <div id={id} className="drum-pad" onClick={handleClick}>
-            <p>{keySelect} {id}</p>
-            <audio src={sampleSrc} id={keySelect} className="audio" />
+            <p>{keySelect}</p>
+            <audio src={sampleSrc} id={keySelect} className="clip" />
         </div>
     )
 }

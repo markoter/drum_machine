@@ -35,7 +35,7 @@ const DrumMachine = () => {
             key: "D"
         },
         {
-            name: "Kick-n'-Hat",
+            name: "Kick-n-Hat",
             src: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3",
             key: "Z"
         },
