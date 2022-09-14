@@ -2,8 +2,32 @@
     --main-color: black;
     --color-back: beige;
 }
+
 body {
     background-color: var(--color-back);
     margin: 0;
     padding: 0;
+
+}
+
+#drum-machine {
+    border: 2px solid red;
+    padding: 4px;
+    display: flex;
+    justify-content: space-around;
+
+    .machine-part {
+        height: 40vw;
+        width: 40vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 2px solid var(--main-color);
+
+        .drum-pad {
+            border: 2px dotted var(--main-color);
+            height: 10vw;
+            width: 10vw;
+            margin: 6px;
+        }
+    }
 }

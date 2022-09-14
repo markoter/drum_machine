@@ -54,12 +54,14 @@ const DrumMachine = () => {
 
     return (
         <div id="drum-machine">
-            and this is drum machine
-            {    
-                samples.map((sample) => (
-                    <Pad key={sample.name} id={sample.name} sampleSrc={sample.src} keySelect={sample.key}/>
-                ))
-            }
+            <div id="pads-grid" className="machine-part">
+                {
+                    samples.map((sample) => (
+                        <Pad key={sample.name} id={sample.name} sampleSrc={sample.src} keySelect={sample.key} />
+                    ))
+                }
+            </div>
+
             <Display />
         </div>
     )
