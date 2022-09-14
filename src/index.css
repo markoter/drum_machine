@@ -10,7 +10,6 @@ body {
 }
 
 #drum-machine {
-  border: 2px solid red;
   padding: 4px;
   display: flex;
   justify-content: center;
@@ -26,7 +25,8 @@ body {
   justify-items: center;
 }
 #drum-machine #pads-grid .drum-pad {
-  border: 2px dotted var(--main-color);
+  border: 2px solid var(--main-color);
+  background-color: aliceblue;
   height: 10vw;
   width: 10vw;
   display: flex;
