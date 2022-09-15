@@ -68,11 +68,12 @@ function App() {
   const blinkSelectedPad = () => {
     const pad = document.querySelector(`#${samples[selectedPad].name}`)
     //activate pad and deactivate after time
-    togglePadClass()
+    togglePadClass(pad)
     setTimeout(() => togglePadClass, 100)
   }
 
   const handlePad = () => {
+    console.log("handlePad works")
     blinkSelectedPad()
     playSelectedAudio()
   }
@@ -85,7 +86,7 @@ function App() {
         samples={samples}
         selectedPad={selectedPad}
         changeSelectedPad={changeSelectedPad}
-        handleSelectedPad={handlePad}
+        handlePad={handlePad}
       />
     </div>
   );

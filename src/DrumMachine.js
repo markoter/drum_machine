@@ -15,7 +15,7 @@ const DrumMachine = (props) => {
                             sample={sample}
                             selectedPad={selectedPad}
                             changeSelectedPad={changeSelectedPad}
-                            handePad={handlePad}
+                            handlePad={handlePad}
                         />
                     ))
                 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Pad = (props) => {
-    const { sample, selectedPad, changeSelectedPad, handlePad } = props
+    const { sample, selectedPad, changeSelectedPad, handlePad, testerConsole } = props
     
     //window.addEventListener("keyup", (event) => handleKey(event.key))
 
