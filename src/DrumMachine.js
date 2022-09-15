@@ -12,6 +12,7 @@ const DrumMachine = (props) => {
                     samples.map((sample, index) => (
                         <Pad
                             key={index}
+                            index={index}
                             sample={sample}
                             selectedPad={selectedPad}
                             changeSelectedPad={changeSelectedPad}

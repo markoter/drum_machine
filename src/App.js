@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DrumMachine from "./DrumMachine";
 
 function App() {
-  const sampleList = [
+  const samples = [
     {
       name: "Heater_1",
       src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
@@ -49,10 +49,8 @@ function App() {
       keyName: "C"
     }
   ]
-  //pass data for each pad down with state
-  const [samples] = useState(sampleList)
 
-  //pass info which pad is selected with mouse or with key
+  //pass info which pad is selected with mouse or with key as state
   const [selectedPad, changeSelectedPad] = useState(0)
 
   //music player
@@ -69,14 +67,19 @@ function App() {
     const pad = document.querySelector(`#${samples[selectedPad].name}`)
     //activate pad and deactivate after time
     togglePadClass(pad)
-    setTimeout(() => togglePadClass, 100)
+    setTimeout(() => togglePadClass(pad), 100)
   }
 
   const handlePad = () => {
-    console.log("handlePad works")
-    blinkSelectedPad()
     playSelectedAudio()
+    blinkSelectedPad()
   }
+  // window.addEventListener("keyup", (event) => {
+  //   console.log(event.key)
+    
+  //   handlePad()
+
+  // })
 
 
   return (
