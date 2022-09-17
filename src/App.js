@@ -56,7 +56,7 @@ function App() {
 
   //music player
   const playSelectedAudio = () => {
-    const audioTrack = document.querySelector(`#${samples[selectedPad].keyName}`)
+    const audioTrack = document.getElementById(samples[selectedPad].keyName)
     audioTrack.play()
   }
   const togglePadClass = (pad) => {
@@ -65,7 +65,7 @@ function App() {
   }
   //make pad "blink" after clicked
   const blinkSelectedPad = () => {
-    const pad = document.querySelector(`#${samples[selectedPad].name}`)
+    const pad = document.getElementById(samples[selectedPad].name)
     //activate pad and deactivate after time
     togglePadClass(pad)
     setTimeout(() => togglePadClass(pad), 100)
