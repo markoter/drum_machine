@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DrumMachine from "./DrumMachine";
+
 
 function App() {
   const samples = [
@@ -74,12 +75,32 @@ function App() {
     playSelectedAudio()
     blinkSelectedPad()
   }
-  // window.addEventListener("keyup", (event) => {
-  //   console.log(event.key)
-    
-  //   handlePad()
+  const handleKeyPress = (e) => {
+    const keyPressed = e.key
+    console.log(keyPressed)
+    switch (keyPressed) {
+      case "q":
+        changeSelectedPad(0)
+        break
+      case "w":
+        changeSelectedPad(1)
+        break
+      default:
+        break
+    }
+    handlePad()
+  }
 
-  // })
+  useEffect(() => {
+      document.addEventListener("keydown", handleKeyPress)
+      return () => {
+        document.removeEventListener("keydown", handleKeyPress)
+      }
+
+  }, [handleKeyPress]
+  )
+
+
 
 
   return (
@@ -93,6 +114,7 @@ function App() {
       />
     </div>
   );
+
 }
 
 export default App;
