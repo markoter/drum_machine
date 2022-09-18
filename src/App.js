@@ -54,29 +54,19 @@ function App() {
   //pass info which pad is selected with mouse or with key as state
   const [selectedPad, changeSelectedPad] = useState(0)
 
-  //music player
-  const playSelectedAudio = () => {
-    const audioTrack = document.getElementById(samples[selectedPad].keyName)
-    audioTrack.play()
-  }
+
   const togglePadClass = (pad) => {
     pad.classList.toggle('clicked')
 
   }
   //make pad "blink" after clicked
-  const blinkSelectedPad = () => {
-    const pad = document.getElementById(samples[selectedPad].name)
-    //activate pad and deactivate after time
-    togglePadClass(pad)
-    setTimeout(() => togglePadClass(pad), 100)
-  }
 
-  const handlePad = () => {
-    playSelectedAudio()
-    blinkSelectedPad()
-  }
-  const handleKeyPress = (e) => {
-    const audioId = e.key.toUpperCase()
+
+
+  
+
+  //play audio (find by audioId (Q, W, E...))
+  const playAudio = (audioId) => {
     const audio = document.getElementById(audioId)
 
     if (audio) {
@@ -84,11 +74,32 @@ function App() {
     }
   }
 
+  //blink pad (find by padIndex (0, 1, 2... ))
+  const blinkSelectedPad = (padIndex) => {
+    const pad = document.getElementById(samples[padIndex].name)
+    //activate pad and deactivate after time
+    togglePadClass(pad)
+    setTimeout(() => togglePadClass(pad), 100)
+  }
+
+  //handle pad full behavior (audio and blink)
+  const handlePad = (padIndex, audioId) => {
+    blinkSelectedPad(padIndex)
+    playAudio(audioId)
+  }
+
+  //handle using keyboard ui
+  const handleKeyPress = (e) => {
+    const audioId = e.key.toUpperCase()
+    //handlePad(padIndex, audioId)
+
+  }
+
   useEffect(() => {
-      document.addEventListener("keydown", handleKeyPress)
-      return () => {
-        document.removeEventListener("keydown", handleKeyPress)
-      }
+    document.addEventListener("keydown", handleKeyPress)
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress)
+    }
 
   }, [handleKeyPress]
   )
