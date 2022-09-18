@@ -76,19 +76,12 @@ function App() {
     blinkSelectedPad()
   }
   const handleKeyPress = (e) => {
-    const keyPressed = e.key
-    console.log(keyPressed)
-    switch (keyPressed) {
-      case "q":
-        changeSelectedPad(0)
-        break
-      case "w":
-        changeSelectedPad(1)
-        break
-      default:
-        break
+    const audioId = e.key.toUpperCase()
+    const audio = document.getElementById(audioId)
+
+    if (audio) {
+      audio.play()
     }
-    handlePad()
   }
 
   useEffect(() => {
