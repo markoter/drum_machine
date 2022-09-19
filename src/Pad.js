@@ -4,7 +4,7 @@ const Pad = (props) => {
     const { sample, selectedPad, changeSelectedPad, handlePad, testerConsole, index } = props
 
     const playAudio = () => {
-        handlePad(index, sample.keyName)
+        handlePad(sample.name, sample.keyName)
     }
     return (
         <div id={sample.name} className="drum-pad" onClick={playAudio}>

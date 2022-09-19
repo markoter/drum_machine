@@ -75,24 +75,28 @@ function App() {
   }
 
   //blink pad (find by padIndex (0, 1, 2... ))
-  const blinkSelectedPad = (padIndex) => {
-    const pad = document.getElementById(samples[padIndex].name)
+  const blinkSelectedPad = (padId) => {
+    const pad = document.getElementById(padId)
     //activate pad and deactivate after time
     togglePadClass(pad)
     setTimeout(() => togglePadClass(pad), 100)
   }
 
   //handle pad full behavior (audio and blink)
-  const handlePad = (padIndex, audioId) => {
-    blinkSelectedPad(padIndex)
+  const handlePad = (padId, audioId) => {
+    blinkSelectedPad(padId)
     playAudio(audioId)
   }
 
   //handle using keyboard ui
   const handleKeyPress = (e) => {
     const audioId = e.key.toUpperCase()
-    //handlePad(padIndex, audioId)
-
+    for (let i = 0; i<9; i++) {
+      if (audioId === samples[i].keyName) {
+        const padId = samples[i].name
+        handlePad(padId, audioId)
+      }
+    }
   }
 
   useEffect(() => {
