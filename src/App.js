@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import DrumMachine from "./DrumMachine";
 
 
@@ -51,6 +51,8 @@ function App() {
     }
   ]
 
+  const [playedSample, changePlayedSample] = useState("")
+
   //play audio (find by audioId (sample key)
   const playAudio = (audioId) => {
     const audio = document.getElementById(audioId)
@@ -72,6 +74,7 @@ function App() {
   const handlePad = (padId, audioId) => {
     blinkSelectedPad(padId)
     playAudio(audioId)
+    changePlayedSample(padId)
   }
 
   //handle using keyboard ui
@@ -100,6 +103,7 @@ function App() {
       <DrumMachine
         samples={samples}
         handlePad={handlePad}
+        playedSample={playedSample}
       />
     </div>
   );

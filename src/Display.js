@@ -1,9 +1,10 @@
 import React from "react";
 
-const Display = () => {
+const Display = (props) => {
+    const {playedSample} = props
     return (
         <div id="display" className="machine-part">
-            this is display
+            {playedSample}
         </div>
     )
 }

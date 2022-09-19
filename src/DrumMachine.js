@@ -3,7 +3,7 @@ import Display from "./Display";
 import Pad from "./Pad";
 
 const DrumMachine = (props) => {
-    const { samples, handlePad } = props
+    const { samples, handlePad, playedSample } = props
 
     return (
         <div id="drum-machine">
@@ -19,7 +19,7 @@ const DrumMachine = (props) => {
                 }
             </div>
 
-            <Display />
+            <Display playedSample={playedSample}/>
         </div>
     )
 }
