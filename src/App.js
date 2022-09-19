@@ -91,7 +91,7 @@ function App() {
       document.removeEventListener("keydown", handleKeyPress)
     }
 
-  }, [handleKeyPress]
+  } // , [handleKeyPress]
   )
 
   return (
