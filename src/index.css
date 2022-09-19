@@ -1,9 +1,13 @@
 :root {
-  --main-color: black;
-  --color-back: beige;
+  --color-back: #45aaf2;
+  --color-display: #f7b731;
+  --color-pad: #4b6584;
+  --color-pad-clicked: #20bf6b;
+  --color-font: white;
 }
 
 body {
+  color: var(--color-font);
   background-color: var(--color-back);
   margin: 0;
   padding: 0;
@@ -33,15 +37,15 @@ body {
 #drum-machine #pads-grid .drum-pad {
   font-size: 4vmax;
   border-radius: 15px;
-  background-color: aliceblue;
-  height: 10vmax;
-  width: 10vmax;
+  background-color: var(--color-pad);
+  height: 12vmax;
+  width: 12vmax;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #drum-machine #pads-grid .clicked {
-  background-color: orange;
+  background-color: var(--color-pad-clicked);
 }
 #drum-machine #display {
   display: flex;
@@ -50,12 +54,13 @@ body {
   height: 16vmax;
 }
 #drum-machine #display p {
+  background-color: var(--color-display);
   text-align: center;
   padding: 2vmax;
   font-size: 6vmax;
   border-radius: 15px;
-  background-color: white;
-  width: 32vmax;
+  background-color: var(--color-display);
+  width: 35vmax;
   height: 10vmax;
 }
 
