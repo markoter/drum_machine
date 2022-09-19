@@ -4,7 +4,7 @@ const Display = (props) => {
     const {playedSample} = props
     return (
         <div id="display" className="machine-part">
-            {playedSample}
+            <p>{playedSample}</p>
         </div>
     )
 }
