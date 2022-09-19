@@ -1,7 +1,7 @@
 import React from "react";
 
 const Pad = (props) => {
-    const { sample, selectedPad, changeSelectedPad, handlePad, testerConsole, index } = props
+    const { sample, handlePad } = props
 
     const playAudio = () => {
         handlePad(sample.name, sample.keyName)

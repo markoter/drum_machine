@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import DrumMachine from "./DrumMachine";
 
 
@@ -51,21 +51,7 @@ function App() {
     }
   ]
 
-  //pass info which pad is selected with mouse or with key as state
-  const [selectedPad, changeSelectedPad] = useState(0)
-
-
-  const togglePadClass = (pad) => {
-    pad.classList.toggle('clicked')
-
-  }
-  //make pad "blink" after clicked
-
-
-
-  
-
-  //play audio (find by audioId (Q, W, E...))
+  //play audio (find by audioId (sample key)
   const playAudio = (audioId) => {
     const audio = document.getElementById(audioId)
 
@@ -74,12 +60,12 @@ function App() {
     }
   }
 
-  //blink pad (find by padIndex (0, 1, 2... ))
+  //blink pad (find by padId (sample name)
   const blinkSelectedPad = (padId) => {
     const pad = document.getElementById(padId)
-    //activate pad and deactivate after time
-    togglePadClass(pad)
-    setTimeout(() => togglePadClass(pad), 100)
+    //add class 'clicked' to change look using css
+    pad.classList.toggle('clicked')
+    setTimeout(() => pad.classList.toggle('clicked'), 100)
   }
 
   //handle pad full behavior (audio and blink)
@@ -108,16 +94,11 @@ function App() {
   }, [handleKeyPress]
   )
 
-
-
-
   return (
     <div className="App">
       <h1>APP here</h1>
       <DrumMachine
         samples={samples}
-        selectedPad={selectedPad}
-        changeSelectedPad={changeSelectedPad}
         handlePad={handlePad}
       />
     </div>
